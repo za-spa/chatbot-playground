@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  default:
+    desc: show commands
+    cmds:
+      - task -l --sort none
+
+  setup:
+    desc: set up environment
+    cmds:
+      - uv run pre-commit install
+      - uv sync
+
+  start:
+    desc: run streamlit at local
+    cmds:
+      - uv run streamlit run src/chatbot_playground/app.py

@@ -1,0 +1,63 @@
+[project]
+name = "chatbot-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "zaspa", email = "zaaaspa@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit>=1.41.1",
+]
+
+[project.scripts]
+chatbot-playground = "chatbot_playground:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.14.1",
+    "pre-commit>=4.0.1",
+    "pytest>=8.3.4",
+    "ruff>=0.8.6",
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+]
+
+line-length = 119
+indent-width = 4
+
+# Assume Python 3.12
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+  "F", # Flake8
+  "B", # Black
+  "I", # isort
+  "E", # error
+  "W"  # warning
+]
+ignore = []
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
